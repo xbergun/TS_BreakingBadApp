@@ -1,12 +1,14 @@
-import React from 'react';
-import Dashboard from './pages/Dashboard';
-import Navbar from './pages/Navbar';
+import Dashboard from "pages/Dashboard";
+import Navbar from "pages/Navbar";
+import "./App.css";
 
 function App() {
   return (
-    <div>
-     <Navbar/>
-        <Dashboard/>
+    <div >
+      <div>
+        <Navbar />
+      </div>
+      <Dashboard />
     </div>
   );
 }
