@@ -19,7 +19,6 @@ import LastPage from "components/LastPage/LastPage";
 const Home = () => {
   const characters = useSelector((state: RootState) => state.characters.items);
   const status = useSelector((state: RootState) => state.characters.status);
-  const error = useSelector((state: RootState) => state.characters.error);
   const nextPage = useSelector((state: RootState) => state.characters.page);
   const hasNextPage = useSelector(
     (state: RootState) => state.characters.hasNextPage

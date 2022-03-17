@@ -1,16 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import CharacterInitialStateProps from "types/CharacterInitialStateProps";
+import { characterInitialState } from "./CharacterInitialState";
 
-
-const characterInitialState = {
-    items: Array(),
-    status : "idle",
-    error: false,
-    page: 0,
-    hasNextPage: true,
-    
-} as CharacterInitialStateProps
 
 const char_limit = 12
 
