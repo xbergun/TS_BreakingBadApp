@@ -12,12 +12,15 @@ import CharacterProps from "types/CharacterProps";
 import "./index.css";
 import CustomButton from "components/Button/CustomButton";
 import CustomButtonProps from "types/CustomButtonTypes";
+import LastPage from "components/LastPage/LastPage";
 const Home = () => {
   const characters = useSelector((state: RootState) => state.characters.items);
   const status = useSelector((state: RootState) => state.characters.status);
   const error = useSelector((state: RootState) => state.characters.error);
   const nextPage = useSelector((state: RootState) => state.characters.page);
-  const hasNextPage = useSelector( (state: RootState) => state.characters.hasNextPage);
+  const hasNextPage = useSelector(
+    (state: RootState) => state.characters.hasNextPage
+  );
 
   const dispatch = useDispatch();
 
@@ -25,10 +28,7 @@ const Home = () => {
     if (status === "idle") {
       dispatch(fetchCharacters(nextPage));
     }
-      
-    
-    
-  }, [dispatch,status]);
+  }, [dispatch, status]);
 
   if (status === "failed") {
     return (
@@ -41,43 +41,44 @@ const Home = () => {
   const handleClick = (e: CustomButtonProps) => {
     e.preventDefault!();
     dispatch(fetchCharacters(nextPage));
-  }
+  };
 
   return (
     <div className="home">
-      <Grid columns={3}  container  textAlign="center" >
+      <Grid columns={3} container textAlign="center">
         <Grid.Row>
           {characters.map((character: CharacterProps) => (
-            <Grid.Column >
+            <Grid.Column>
               <Link to={`/char/${character.char_id}`}>
-              <Card key={character.char_id} className="card">
-                <Image src={character.img} className="img" />
-                <Card.Content>
-                  <Card.Header>{character.name}</Card.Header>
-                  <Card.Meta>
-                    <span className="date">{character.birthday}</span>
-                  </Card.Meta>
-                  <Card.Description>{character.nickname}</Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                  <a>
-                    <Icon name="user" />
-                    {character.portrayed}
-                  </a>
-                </Card.Content>
-              </Card>
+                <Card key={character.char_id} className="card">
+                  <Image src={character.img} className="img" />
+                  <Card.Content>
+                    <Card.Header>{character.name}</Card.Header>
+                    <Card.Meta>
+                      <span className="date">{character.birthday}</span>
+                    </Card.Meta>
+                    <Card.Description>{character.nickname}</Card.Description>
+                  </Card.Content>
+                  <Card.Content extra>
+                    <a>
+                      <Icon name="user" />
+                      {character.portrayed}
+                    </a>
+                  </Card.Content>
+                </Card>
               </Link>
-             
             </Grid.Column>
           ))}
         </Grid.Row>
         <div>
           {status === "pending" ? <Loading /> : null}
-          {hasNextPage && status !== "pending" &&<CustomButton
-            onClick={handleClick}
-            title={`Daha fazla göster ${nextPage}`}
-          />}
-          {!hasNextPage  && <h1>Son sayfa</h1>}
+          {hasNextPage && status !== "pending" && (
+            <CustomButton
+              onClick={handleClick}
+              title={`Daha fazla göster ${nextPage}`}
+            />
+          )}
+          {!hasNextPage && <LastPage/>}
         </div>
       </Grid>
     </div>

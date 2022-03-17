@@ -13,11 +13,6 @@ const Dashboard = () => {
         <Route path="/" element={<Home />} />
         <Route path="/episodes" element={<About />} />
         <Route path="/char/:char_id" element={<CharacterDetail />} />
-
-
-
-
-        {/* 404 */}
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>
