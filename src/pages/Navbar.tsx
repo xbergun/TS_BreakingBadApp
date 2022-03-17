@@ -5,12 +5,12 @@ const Navbar = () => {
   return (
     <nav>
       <Menu>
-        <Menu.Item  as={NavLink} to='/'  name="Characters" />
-        
-
-        <Menu.Item as={NavLink} to='episodes' name="Episodes" />
-
-        <Menu.Item name="upcomingEvents">Upcoming Events</Menu.Item>
+        <NavLink to="/">
+          <Menu.Item name="Characters" />
+        </NavLink>
+        <NavLink to="quotes">
+          <Menu.Item name="Quotes" />
+        </NavLink>
       </Menu>
       {/* <ul>
         <li>

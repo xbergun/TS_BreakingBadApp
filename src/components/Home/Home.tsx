@@ -13,6 +13,9 @@ import "./index.css";
 import CustomButton from "components/Button/CustomButton";
 import CustomButtonProps from "types/CustomButtonTypes";
 import LastPage from "components/LastPage/LastPage";
+
+
+
 const Home = () => {
   const characters = useSelector((state: RootState) => state.characters.items);
   const status = useSelector((state: RootState) => state.characters.status);
@@ -48,9 +51,9 @@ const Home = () => {
       <Grid columns={3} container textAlign="center">
         <Grid.Row>
           {characters.map((character: CharacterProps) => (
-            <Grid.Column>
+            <Grid.Column key={character.char_id}>
               <Link to={`/char/${character.char_id}`}>
-                <Card key={character.char_id} className="card">
+                <Card  className="card">
                   <Image src={character.img} className="img" />
                   <Card.Content>
                     <Card.Header>{character.name}</Card.Header>
