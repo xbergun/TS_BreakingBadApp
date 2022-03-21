@@ -5,11 +5,19 @@
   padding: 20px;
 }
 
-.home {
+.bg-dark {
   margin-top: 15px;
   background-color: #000000;
   background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);
 }
+
+.bg-light{
+  margin-top: 15px;
+  background-color: red;
+  
+
+}
+
 
 .img {
   width: 100%;

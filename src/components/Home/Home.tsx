@@ -22,7 +22,8 @@ const Home = () => {
   const hasNextPage = useSelector(
     (state: RootState) => state.characters.hasNextPage
   );
-
+  const {isDarkMode} = useSelector((state: RootState) => state.darkMode)
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -45,7 +46,7 @@ const Home = () => {
   };
 
   return (
-    <div className="home">
+    <div className={isDarkMode ? "bg-dark" : "bg-light"}>
       <Grid columns={3} container textAlign="center">
         <Grid.Row>
           {characters.map((character: CharacterProps) => (
