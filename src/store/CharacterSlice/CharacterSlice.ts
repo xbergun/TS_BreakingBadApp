@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import CharacterInitialStateProps from "types/CharacterInitialStateProps";
 import { characterInitialState } from "./CharacterInitialState";
 
 
@@ -26,11 +25,11 @@ export const CharacterSlice = createSlice({
                 state.page === 7 ? state.hasNextPage = false : state.hasNextPage = true
             }
         })
-        builder.addCase(fetchCharacters.pending, (state, action) => {
+        builder.addCase(fetchCharacters.pending, (state) => {
             state.status = "pending"
             state.error = false
         })
-        builder.addCase(fetchCharacters.rejected, (state, action) => {
+        builder.addCase(fetchCharacters.rejected, (state) => {
             state.status = "failed"
             state.error = true
         })

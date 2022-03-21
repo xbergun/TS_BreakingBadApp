@@ -8,12 +8,11 @@ import { Link } from "react-router-dom";
 
 //? type
 import CharacterProps from "types/CharacterProps";
-
-import "./index.css";
 import CustomButton from "components/Button/CustomButton";
 import CustomButtonProps from "types/CustomButtonTypes";
 import LastPage from "components/LastPage/LastPage";
 
+import "./index.css";
 
 
 const Home = () => {

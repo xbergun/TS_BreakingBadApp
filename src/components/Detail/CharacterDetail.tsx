@@ -1,9 +1,7 @@
 import { useParams } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import Loading from "components/Loading/Loading";
 import { Card, Button, Image, Grid } from "semantic-ui-react";
-import { json } from "stream/consumers";
 import LoaderSemantic from "components/Loading/Loader";
 
 const CharacterDetail = () => {
@@ -28,7 +26,7 @@ const CharacterDetail = () => {
       <Grid>
         <Grid.Row>
           <Grid.Column width={3}>
-            {char && 
+            {char &&
               char.map((char: any) => (
                 <Card.Group className="tttt" key={char.char_id}>
                   <Card centered fluid>
@@ -40,9 +38,9 @@ const CharacterDetail = () => {
                       <Card.Header> {char.nickname} </Card.Header>
                       <Card.Header> {char.birthday}</Card.Header>
                       <Card.Content>
-                      <Card.Description> {char.occupation}</Card.Description>
+                        <Card.Description> {char.occupation}</Card.Description>
 
-                      <Card.Description>{char.status}</Card.Description>
+                        <Card.Description>{char.status}</Card.Description>
                       </Card.Content>
                     </Card.Content>
 
@@ -55,12 +53,10 @@ const CharacterDetail = () => {
                   </Card>
                 </Card.Group>
               ))}
-              {char && <code>{JSON.stringify(char)}</code>}
+            {char && <code>{JSON.stringify(char)}</code>}
           </Grid.Column>
         </Grid.Row>
       </Grid>
-
-      
     </div>
   );
 };

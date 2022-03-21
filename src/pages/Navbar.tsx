@@ -4,7 +4,7 @@ import { Menu } from "semantic-ui-react";
 const Navbar = () => {
   return (
     <nav>
-      <Menu>
+      <Menu color="black" inverted>
         <NavLink to="/">
           <Menu.Item name="Characters" />
         </NavLink>

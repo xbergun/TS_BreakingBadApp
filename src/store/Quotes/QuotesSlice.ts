@@ -20,10 +20,10 @@ export const quotesSlice = createSlice({
             state.items = action.payload
             state.status = "succeeded"
         })
-        builder.addCase(fetchAllQuotes.pending, (state, action) => {
+        builder.addCase(fetchAllQuotes.pending, (state) => {
             state.status = "pending"
         })
-        builder.addCase(fetchAllQuotes.rejected, (state, action) => {
+        builder.addCase(fetchAllQuotes.rejected, (state) => {
             state.status = "failed"
         })
     }
