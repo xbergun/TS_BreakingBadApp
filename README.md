@@ -1,6 +1,10 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a web application built with TypeScript, a typed superset of JavaScript, that utilizes the Breaking Bad API, which provides data about the popular television show "Breaking Bad" such as characters, episodes and quotes. The application likely allows users to view and interact with data from the Breaking Bad API in a user-friendly manner. It is also possible that the project would allow to do some operation on the data like filtering,
+
+It also utilizes React.js, a popular JavaScript library for building user interfaces, to create a dynamic and interactive user experience. The use of TypeScript provides benefits such as improved code organization, stronger type checking, and a more maintainable codebase. The combination of React and TypeScript allows for efficient and robust front-end development while the Breaking Bad API provides a wealth of data for the application to use.
+
+Overall, this project likely allows fans of the show to access and explore a wealth of information about Breaking Bad in a user-friendly and interactive way.
 
 ## Available Scripts
 
